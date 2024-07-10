@@ -7,28 +7,28 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "")  # ⚠️ Required
-    API_HASH = os.environ.get("API_HASH", "")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "")  # ⚠️ Required
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "7150335254:AAEHnOgoS-_0IvXHHXH7XVb9mn9B1v8VV4A")
+API_ID = int(os.environ.get("API_ID", "25198711"))
+API_HASH = os.environ.get("API_HASH", "2a99a1375e26295626c04b4606f72752")
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
     STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "BQGAgHcAOv5HLQdDi81d_vrFyHBLJ46IOBLFCzRXvv4xI6GolsYeHocE7TblmrYeKVDEV5rQfbeHI2V6xPUBnnu3jEcISFuXE6RlVYGdgyyVXPGVAlFIDG-mltCFlL2FKciHbmOiV1uecSzAyeRUCbY2AODA2xoN9iRwAr_i6BeAPKYcpE3v5OcyPdPRCHtcSuPa5r6a6Vzz38sixT0uvboj7v2kCjKNS2wOVvI08F1ZkxdcV_uiXkTvugoDc_2YQfqeFIs7ArP3a-h6QSPmVEBCn5aJnUDFCONA8D80S4kmOqKjVPZAZkpLmsGSDppxghI_yCBbf1JAjYw0VQgrRs3-qnradQAAAABnuq34AA")
 
     # database config
-    DB_NAME = os.environ.get("DB_NAME", "straw_hat_database")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://sagatobots00001:sagatobots100@cluster00001.vgdshkw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster00001")  # ⚠️ Required
+    DB_NAME = os.environ.get("DB_NAME", "Aniflix")
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")  # ⚠️ Required
 
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "https://telegra.ph/file/a79b5c323865b6760be36.jpg")
+    START_PIC = os.environ.get("START_PIC", "https://graph.org/file/9c910cbc74144b3b2efce.jpg")
     ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '').split()]  # ⚠️ Required
+        admin) else admin for admin in os.environ.get('ADMIN', '1740287480').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "Straw_Hat_Bots") # ⚠️ Required Username without @
-    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002031978775"))  # ⚠️ Required
-    FLOOD = int(os.environ.get("FLOOD", '15'))
+    FORCE_SUB = os.environ.get("FORCE_SUB", "aniflixClou") # ⚠️ Required Username without @
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002219568827"))  # ⚠️ Required
+    FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
         "BANNED_USERS", "1234567890").split())
 

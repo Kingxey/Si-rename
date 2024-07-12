@@ -1,6 +1,3 @@
-<p align="center">
-<img src="https://graph.org/file/f47f124a14461141f7b26.jpg" alt="logo" target="/blank">
-
 <h2 align="center">
   ─「 ᴘʀᴏ ʀᴇɴᴀᴍᴇ  ʙᴏᴛ 」─
 </h2>

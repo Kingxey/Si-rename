@@ -9,12 +9,12 @@ class Config(object):
     # pyro client config
     API_ID = os.environ.get("API_ID", "25198711")  # ⚠️ Required
     API_HASH = os.environ.get("API_HASH", "2a99a1375e26295626c04b4606f72752")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7066960405:AAFciewJzvIu2w6YfkNTpVDq14ZxWzw5KEQ")  # ⚠️ Required
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7433809622:AAGocOZUr6elPImHzcCOBpCFZaF5hj3HdCE")  # ⚠️ Required
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
     STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "BQC6kfsABCvxCOYt-HCDb8EGjf4U9gBwZnc43aA7GzNKvZWzjHJatdrBm5e32OWY6jG4uFGZRXwbGNmHm_HL6Q78ukQAEp-lU9qJ9qFMH0ItghNheqEP-ma3EcsrsLk0qgxMBKWiKG30-Mc6TzbipuL5_DRW-BbLcpsSavUkOR1YvFGdNkZ01xj4S06bS6oxDWSbN3gvQDRqxFNqJf5iUW5ZkaMO8RGweKrbT6goWrrvfB1S2aUuLTfDB28GizJy6vXN-U-Vkz4vKnzH1giqqdZamgcrhvfEYW0UDdUq0prztmWzA6fDYxY1enJA6JL4wxHX4rGAOVWnljy13ly8oqc2TdclJAAAAABnuq34AA")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "BQAAxJIAiT07fWHRU7iKgbwx_GQ2P0zY3uGMjbcOAXGIh1agBZozR1Negp94j-Ae1ZH4puRd13JcOZGlM9MRLvBpvrCEQ-SzcOIhyDZQU-B4cN1-Zyy1r5aJfj10Lk-w5LHrvKAWgK_5w3lOkhI83Tj1-XfRBDQBqruXCxCGki5jrgdV5Dg6kh9Nw05minv6IU9H1oZnqk8nfV0atrRgPe150VLYt7yjnxDW4dMOG4bR9W78VefkfJAmpbdeYy2mBZfVSLzOhfLzD1UErtA0a4GM_UApngkOqISeOx8OjJVNSdxHgQ99s_29xBrynomq1EG6LwND-GrIWV_w0LYXvXWLHEnwggAAAABnuq34AA")
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Aniflix")

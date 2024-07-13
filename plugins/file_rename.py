@@ -1,7 +1,6 @@
 import random
 from helper.ffmpeg import fix_thumb, take_screen_shot
 from pyrogram import Client, filters
-from pyrogram.enums import MessageMediaType
 from pyrogram.types import ForceReply
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
@@ -17,11 +16,24 @@ from config import Config
 app = Client("test", api_id=Config.STRING_API_ID,
              api_hash=Config.STRING_API_HASH, session_string=Config.STRING_SESSION)
 
+# Command to set the current thumbnail
+@Client.on_message(filters.command("set_thumb") & filters.private)
+async def set_thumbnail(client, message):
+    if message.reply_to_message and message.reply_to_message.photo:
+        chat_id = message.chat.id
+        photo_message = message.reply_to_message
+        thumbnail_path = await client.download_media(
+            photo_message.photo,
+            file_name=f"thumbnails/{chat_id}_thumb.jpg"  # Save with a unique name
+        )
+        await db.set_thumbnail(chat_id, thumbnail_path)  # Store thumbnail path in database
+        await message.reply_text("✅Tʜᴜᴍʙɴᴀɪʟ Sᴇᴛ Sᴜᴄᴄᴇssғᴜʟʟʏ!")
+
 # Directly prompt the user to enter the new file name
 @Client.on_message(filters.private & filters.incoming & filters.media)
 async def handle_file(client, message):
     await message.reply_text(
-        "__ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ..__",
+        "__Pʟᴇᴀsᴇ Eɴᴛᴇʀ Nᴇᴡ Fɪʟᴇ Nᴀᴍᴇ...__",
         reply_to_message_id=message.id,
         reply_markup=ForceReply(True)
     )
@@ -61,12 +73,12 @@ async def start_conversion(client, message, file, new_name):
         # adding prefix and suffix
         new_filename = add_prefix_suffix(new_name, prefix, suffix)
     except Exception as e:
-        return await message.reply(f"⚠️ Something went wrong can't able to set Prefix or Suffix ☹️ \n\n❄️ Contact My Creator -> @Urr_Sanjii\nError: {e}")
+        return await message.reply(f"⚠️ Sᴏᴍᴇᴛʜɪɴɢ Wᴇɴᴛ Wʀᴏɴɢ Cᴀɴ'ᴛ Aʙʟᴇ Tᴏ Sᴇᴛ Pʀᴇғɪx Oʀ Sᴜғғɪx ☹️ \n\n❄️ Cᴏɴᴛᴀᴄᴛ Mʏ Cʀᴇᴀᴛᴏʀ -> @Urr_Sanjii\nEʀʀᴏʀ: {e}")
 
     file_path = f"downloads/{new_filename}"
-    ms = await message.reply("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ")
+    ms = await message.reply("Tʀʏɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅ...")
     try:
-        path = await client.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram, progress_args=("\n⚠️ __**Please wait...**__\n\n❄️ **Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
+        path = await client.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram, progress_args=("\n⚠️ __**Pʟᴇᴀsᴇ Wᴀɪᴛ...**__\n\n🌨️ **Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
     except Exception as e:
         return await ms.edit(e)
 
@@ -88,12 +100,12 @@ async def start_conversion(client, message, file, new_name):
 
             try:
                 if er:
-                    return await ms.edit(str(er) + "\n\n**Error**")
+                    return await ms.edit(str(er) + "\n\n**Eʀʀᴏʀ**")
             except BaseException:
                 pass
-        await ms.edit("**Metadata added to the file successfully ✅**\n\n⚠️ __**Tʀyɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....**")
+        await ms.edit("**Mᴇᴛᴀᴅᴀᴛᴀ ᴀᴅᴅᴇᴅ ᴛᴏ ᴛʜᴇ ғɪʟᴇ sᴜᴄᴄᴇssғᴜʟʟʏ ✅**\n\n⚠️ __**Tʀʏɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....**")
     else:
-        await ms.edit("⚠️  __**Please wait...**__\n\n\n**Tʀyɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....**")
+        await ms.edit("⚠️  __**Pʟᴇᴀsᴇ Wᴀɪᴛ...**__\n\n\n**Tʀʏɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....**")
 
     duration = 0
     try:
@@ -163,7 +175,7 @@ async def start_conversion(client, message, file, new_name):
                 height=height,
                 duration=duration,
                 progress=progress_for_pyrogram,
-                progress_args=("⚠️ __**Please wait...**__\n\n🌨️ **Uᴩʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
+                progress_args=("⚠️ __**Pʟᴇᴀsᴇ Wᴀɪᴛ...**__\n\n🌨️ **Uᴩʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
         except Exception as e:
             os.remove(file_path)
             if ph_path:

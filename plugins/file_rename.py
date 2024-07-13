@@ -14,17 +14,17 @@ import time
 from helper.utils import add_prefix_suffix
 from config import Config
 
-
 app = Client("test", api_id=Config.STRING_API_ID,
              api_hash=Config.STRING_API_HASH, session_string=Config.STRING_SESSION)
 
-# Define a function to handle the 'rename' callback
-@Client.on_callback_query(filters.regex('rename'))
-async def rename(bot, update):
-    await update.message.delete()
-    await update.message.reply_text("__ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ..__",
-                                    reply_to_message_id=update.message.reply_to_message.id,
-                                    reply_markup=ForceReply(True))
+# Directly prompt the user to enter the new file name
+@Client.on_message(filters.private & filters.incoming & filters.media)
+async def handle_file(client, message):
+    await message.reply_text(
+        "__ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ..__",
+        reply_to_message_id=message.id,
+        reply_markup=ForceReply(True)
+    )
 
 # Define the main message handler for private messages with replies
 @Client.on_message(filters.private & filters.reply)
@@ -142,7 +142,7 @@ async def start_conversion(client, message, file, new_name):
                 height=height,
                 duration=duration,
                 progress=progress_for_pyrogram,
-                progress_args=("⚠️ __**Uᴩʟᴏᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
+                progress_args=("⚠️ __**Uᴩʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
         except Exception as e:
             os.remove(file_path)
             if ph_path:

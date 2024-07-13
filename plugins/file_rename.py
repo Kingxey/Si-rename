@@ -16,25 +16,12 @@ from config import Config
 app = Client("test", api_id=Config.STRING_API_ID,
              api_hash=Config.STRING_API_HASH, session_string=Config.STRING_SESSION)
 
-# Command to set the current thumbnail
-@Client.on_message(filters.command("set_thumb") & filters.private)
-async def set_thumbnail(client, message):
-    if message.reply_to_message and message.reply_to_message.photo:
-        chat_id = message.chat.id
-        photo_message = message.reply_to_message
-        thumbnail_path = await client.download_media(
-            photo_message.photo,
-            file_name=f"thumbnails/{chat_id}_thumb.jpg"  # Save with a unique name
-        )
-        await db.set_thumbnail(chat_id, thumbnail_path)  # Store thumbnail path in database
-        await message.reply_text("✅Tʜᴜᴍʙɴᴀɪʟ Sᴇᴛ Sᴜᴄᴄᴇssғᴜʟʟʏ!")
-
 # Directly prompt the user to enter the new file name
 @Client.on_message(filters.private & filters.incoming & filters.media)
 async def handle_file(client, message):
     await message.reply_text(
         "__Pʟᴇᴀsᴇ Eɴᴛᴇʀ Nᴇᴡ Fɪʟᴇ Nᴀᴍᴇ...__",
-        reply_to_message_id=message.id,
+        reply_to_message_id=message.message_id,
         reply_markup=ForceReply(True)
     )
 
@@ -45,7 +32,7 @@ async def refunc(client, message):
     if isinstance(reply_message.reply_markup, ForceReply):
         new_name = message.text
         await message.delete()
-        msg = await client.get_messages(message.chat.id, reply_message.id)
+        msg = await client.get_messages(message.chat.id, reply_message.message_id)
         file = msg.reply_to_message
         media = getattr(file, file.media.value)
         if not "." in new_name:

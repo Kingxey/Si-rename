@@ -14,7 +14,7 @@ class Config(object):
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
     STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "BQAAxJIAiT07fWHRU7iKgbwx_GQ2P0zY3uGMjbcOAXGIh1agBZozR1Negp94j-Ae1ZH4puRd13JcOZGlM9MRLvBpvrCEQ-SzcOIhyDZQU-B4cN1-Zyy1r5aJfj10Lk-w5LHrvKAWgK_5w3lOkhI83Tj1-XfRBDQBqruXCxCGki5jrgdV5Dg6kh9Nw05minv6IU9H1oZnqk8nfV0atrRgPe150VLYt7yjnxDW4dMOG4bR9W78VefkfJAmpbdeYy2mBZfVSLzOhfLzD1UErtA0a4GM_UApngkOqISeOx8OjJVNSdxHgQ99s_29xBrynomq1EG6LwND-GrIWV_w0LYXvXWLHEnwggAAAABnuq34AA")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "BQGAgHcAtJ6ESdJk7QeImGUL_qSMX7rEhUyf7UcX4wmBGAUgtJfLsdN3WF5HIzCi5KVsEHXhETBvxVfNOPLvwHWu2DeLO_1o-UpES8mHUP1yvKiP8nukxbHL9dHTwzOkVdOdXBcUPg1CPhrMM22l0DDeV-uBQICb3umdkk-9aJY4K6uSTsOrh7zWXH3bz7zMESfM5ZNX_7NyfmujUcUbg9jSNYko_zkpsXFGUI2pGOSUo7VHrdA7VsrYzluN0rjCReJaco7J2W9i3pxoytnwXTpz10aXvQZIpvlsMeV6kQqzt_Di9hQxyKxWLlWYRGBQroLbN3EyOvVwUx1H83XaVmEwKMQlxgAAAABnuq34AA")
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Aniflix")

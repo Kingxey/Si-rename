@@ -17,17 +17,17 @@ from config import Config
 app = Client("test", api_id=Config.STRING_API_ID,
              api_hash=Config.STRING_API_HASH, session_string=Config.STRING_SESSION)
 
-# Directly prompt the user to enter the new file name for videos only
-@Client.on_message(filters.private & filters.incoming & filters.video)
-async def handle_video(client, message):
+# Directly prompt the user to enter the new file name
+@Client.on_message(filters.private & filters.incoming & filters.media)
+async def handle_file(client, message):
     await message.reply_text(
-        "__Pʟᴇᴀsᴇ ᴇɴᴛᴇʀ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ..__",
+        "__ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ..__",
         reply_to_message_id=message.id,
         reply_markup=ForceReply(True)
     )
 
-# Define the main message handler for private messages with replies for videos only
-@Client.on_message(filters.private & filters.reply & filters.video)
+# Define the main message handler for private messages with replies
+@Client.on_message(filters.private & filters.reply)
 async def refunc(client, message):
     reply_message = message.reply_to_message
     if isinstance(reply_message.reply_markup, ForceReply):

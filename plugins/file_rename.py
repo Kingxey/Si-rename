@@ -17,11 +17,11 @@ from config import Config
 app = Client("test", api_id=Config.STRING_API_ID,
              api_hash=Config.STRING_API_HASH, session_string=Config.STRING_SESSION)
 
-# Directly prompt the user to enter the new file names
+# Directly prompt the user to enter the new file name
 @Client.on_message(filters.private & filters.incoming & filters.media)
 async def handle_file(client, message):
     await message.reply_text(
-        "__Please enter new file names separated by commas for bulk renaming.__",
+        "__ᴘʟᴇᴀsᴇ ᴇɴᴛᴇʀ ɴᴇᴡ ғɪʟᴇ ɴᴀᴍᴇ..__",
         reply_to_message_id=message.id,
         reply_markup=ForceReply(True)
     )
@@ -31,27 +31,21 @@ async def handle_file(client, message):
 async def refunc(client, message):
     reply_message = message.reply_to_message
     if isinstance(reply_message.reply_markup, ForceReply):
-        new_names = message.text.split(',')
+        new_name = message.text
         await message.delete()
         msg = await client.get_messages(message.chat.id, reply_message.id)
-        files = msg.reply_to_message.media_group
-
-        if len(new_names) != len(files):
-            return await message.reply("The number of new names does not match the number of files. Please try again.")
-
+        file = msg.reply_to_message
+        media = getattr(file, file.media.value)
+        if not "." in new_name:
+            if "." in media.file_name:
+                extn = media.file_name.rsplit('.', 1)[-1]
+            else:
+                extn = "mkv"
+            new_name = new_name + "." + extn
         await reply_message.delete()
 
-        for file, new_name in zip(files, new_names):
-            new_name = new_name.strip()
-            media = getattr(file, file.media.value)
-            if not "." in new_name:
-                if "." in media.file_name:
-                    extn = media.file_name.rsplit('.', 1)[-1]
-                else:
-                    extn = "mkv"
-                new_name = new_name + "." + extn
-
-            await start_conversion(client, message, file, new_name)
+        # Directly start the conversion process for video files
+        await start_conversion(client, message, file, new_name)
 
 # Define the conversion process
 async def start_conversion(client, message, file, new_name):
@@ -70,19 +64,19 @@ async def start_conversion(client, message, file, new_name):
         return await message.reply(f"⚠️ Something went wrong can't able to set Prefix or Suffix ☹️ \n\n❄️ Contact My Creator -> @Urr_Sanjii\nError: {e}")
 
     file_path = f"downloads/{new_filename}"
-    ms = await message.reply("Trying to download")
+    ms = await message.reply("Tʀyɪɴɢ Tᴏ Dᴏᴡɴʟᴏᴀᴅɪɴɢ")
     try:
-        path = await client.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram, progress_args=("\n⚠️ __**Please wait...**__\n\n❄️ **Download started....**", ms, time.time()))
+        path = await client.download_media(message=file, file_name=file_path, progress=progress_for_pyrogram, progress_args=("\n⚠️ __**Please wait...**__\n\n❄️ **Dᴏᴡɴʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
     except Exception as e:
         return await ms.edit(e)
 
     _bool_metadata = await db.get_metadata(message.chat.id)
 
-    if _bool_metadata:
+    if (_bool_metadata):
         metadata_path = f"Metadata/{new_filename}"
         metadata = await db.get_metadata_code(message.chat.id)
         if metadata:
-            await ms.edit("I found your metadata\n\n__**Adding metadata to file....**")
+            await ms.edit("I Fᴏᴜɴᴅ Yᴏᴜʀ Mᴇᴛᴀᴅᴀᴛᴀ\n\n__**Aᴅᴅɪɴɢ Mᴇᴛᴀᴅᴀᴛᴀ Tᴏ Fɪʟᴇ....**")
             cmd = f"""ffmpeg -i "{path}" {metadata} "{metadata_path}" """
 
             process = await asyncio.create_subprocess_shell(
@@ -97,9 +91,9 @@ async def start_conversion(client, message, file, new_name):
                     return await ms.edit(str(er) + "\n\n**Error**")
             except BaseException:
                 pass
-        await ms.edit("**Metadata added to the file successfully ✅**\n\n⚠️ __**Trying to upload....**")
+        await ms.edit("**Metadata added to the file successfully ✅**\n\n⚠️ __**Tʀyɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....**")
     else:
-        await ms.edit("⚠️  __**Please wait...**__\n\n\n**Trying to upload....**")
+        await ms.edit("⚠️  __**Please wait...**__\n\n\n**Tʀyɪɴɢ Tᴏ Uᴩʟᴏᴀᴅɪɴɢ....**")
 
     duration = 0
     try:
@@ -121,11 +115,11 @@ async def start_conversion(client, message, file, new_name):
             caption = c_caption.format(filename=new_filename, filesize=humanbytes(
                 media.file_size), duration=convert(duration))
         except Exception as e:
-            return await ms.edit(text=f"Your caption error except keyword argument: {e}")
+            return await ms.edit(text=f"Yᴏᴜʀ Cᴀᴩᴛɪᴏɴ Eʀʀᴏʀ Exᴄᴇᴩᴛ Kᴇʏᴡᴏʀᴅ Aʀɢᴜᴍᴇɴᴛ ●> ({e})")
     else:
         caption = f"**{new_filename}**"
 
-    if media.thumbs or c_thumb:
+    if (media.thumbs or c_thumb):
         if c_thumb:
             ph_path = await client.download_media(c_thumb)
             width, height, ph_path = await fix_thumb(ph_path)
@@ -148,7 +142,7 @@ async def start_conversion(client, message, file, new_name):
                 height=height,
                 duration=duration,
                 progress=progress_for_pyrogram,
-                progress_args=("⚠️ __**Upload started....**", ms, time.time()))
+                progress_args=("⚠️ __**Uᴩʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
         except Exception as e:
             os.remove(file_path)
             if ph_path:
@@ -157,7 +151,7 @@ async def start_conversion(client, message, file, new_name):
                 os.remove(metadata_path)
             if path:
                 os.remove(path)
-            return await ms.edit(f"Error {e}")
+            return await ms.edit(f" Eʀʀᴏʀ {e}")
     else:
         try:
             await client.send_video(
@@ -169,7 +163,7 @@ async def start_conversion(client, message, file, new_name):
                 height=height,
                 duration=duration,
                 progress=progress_for_pyrogram,
-                progress_args=("⚠️ __**Please wait...**__\n\n🌨️ **Upload started....**", ms, time.time()))
+                progress_args=("⚠️ __**Please wait...**__\n\n🌨️ **Uᴩʟᴏᴀᴅ Sᴛᴀʀᴛᴇᴅ....**", ms, time.time()))
         except Exception as e:
             os.remove(file_path)
             if ph_path:
@@ -178,7 +172,7 @@ async def start_conversion(client, message, file, new_name):
                 os.remove(metadata_path)
             if path:
                 os.remove(path)
-            return await ms.edit(f"Error {e}")
+            return await ms.edit(f" Eʀʀᴏʀ {e}")
 
     await ms.delete()
 

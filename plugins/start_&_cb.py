@@ -18,12 +18,12 @@ async def start(client, message):
     await db.add_user(client, message)
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton(
-            '⛅ Uᴘᴅᴀᴛᴇs', url='https://t.me/aniflixClou'),
+            '⛅ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/Straw_Hat_bots'),
         InlineKeyboardButton(
-            '🌨️ Sᴜᴘᴘᴏʀᴛ', url='https://t.me/aniflixClou')
+            '🌨️ sᴜᴘᴘᴏʀᴛ', url='https://t.me/Straw_Hat_SUPPORT')
     ], [
-        InlineKeyboardButton('❄️ Aʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('❗ Hᴇʟᴘ', callback_data='help')
+        InlineKeyboardButton('❄️ ᴀʙᴏᴜᴛ', callback_data='about'),
+        InlineKeyboardButton('❗ ʜᴇʟᴘ', callback_data='help')
     ]])
     if Config.START_PIC:
         await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)
@@ -65,12 +65,12 @@ async def cb_handler(client, query: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    '⛅ Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/aniflixClou'),
+                    '⛅ Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/Straw_Hat_Bots'),
                 InlineKeyboardButton(
-                    '🌨️ Sᴜᴩᴩᴏʀᴛ', url='https://t.me/aniflixClou')
+                    '🌨️ Sᴜᴩᴩᴏʀᴛ', url='https://t.me/Straw_Hat_support')
             ], [
-                InlineKeyboardButton('❄️ Aʙᴏᴜᴛ', callback_data='about'),
-                InlineKeyboardButton('❗ Hᴇʟᴘ', callback_data='help')
+                InlineKeyboardButton('❄️ ᴀʙᴏᴜᴛ', callback_data='about'),
+                InlineKeyboardButton('❗ ʜᴇʟᴘ', callback_data='help')
             ]])
         )
     elif data == "help":
@@ -78,8 +78,8 @@ async def cb_handler(client, query: CallbackQuery):
             text=Txt.HELP_TXT,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("✘ Cʟᴏsᴇ", callback_data="close"),
-                InlineKeyboardButton("⟪ Bᴀᴄᴋ", callback_data="start")
+                InlineKeyboardButton("✘ ᴄʟᴏsᴇ", callback_data="close"),
+                InlineKeyboardButton("⟪ ʙᴀᴄᴋ", callback_data="start")
             ]])
         )
     elif data == "about":
@@ -87,8 +87,8 @@ async def cb_handler(client, query: CallbackQuery):
             text=Txt.ABOUT_TXT.format(client.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("✘ Cʟᴏsᴇ", callback_data="close"),
-                InlineKeyboardButton("⟪ Bᴀᴄᴋ", callback_data="start")
+                InlineKeyboardButton("✘ ᴄʟᴏsᴇ", callback_data="close"),
+                InlineKeyboardButton("⟪ ʙᴀᴄᴋ", callback_data="start")
             ]])
         )
 

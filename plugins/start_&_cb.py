@@ -18,9 +18,9 @@ async def start(client, message):
     await db.add_user(client, message)
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton(
-            '⛅ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/Straw_Hat_bots'),
+            '⛅ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/AntiFlix_origin'),
         InlineKeyboardButton(
-            '🌨️ sᴜᴘᴘᴏʀᴛ', url='https://t.me/Straw_Hat_SUPPORT')
+            '🌨️ sᴜᴘᴘᴏʀᴛ', url='https://t.me/AntiFlix_dis')
     ], [
         InlineKeyboardButton('❄️ ᴀʙᴏᴜᴛ', callback_data='about'),
         InlineKeyboardButton('❗ ʜᴇʟᴘ', callback_data='help')

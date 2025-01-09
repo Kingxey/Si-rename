@@ -9,7 +9,7 @@ class Config(object):
     # pyro client config
     API_ID = os.environ.get("API_ID", "24817837")  # ⚠️ Required
     API_HASH = os.environ.get("API_HASH", "acd9f0cc6beb08ce59383cf250052686")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7561380664:AAEXzd76AE5PyMaxw0_B-_152uj5pJV08Gg")  # ⚠️ Required
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8115314705:AAGaYTT0jQDl3hqcFC9rijeJlmcacaNVBjg")  # ⚠️ Required
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
@@ -22,11 +22,11 @@ class Config(object):
 
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "https://envs.sh/Ag8.jpg")
+    START_PIC = os.environ.get("START_PIC", "https://envs.sh/9zg.jpg")
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '1740287480 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "AntiFlix_A") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "Otakukingcey1") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -45,10 +45,10 @@ class Txt(object):
 
     ABOUT_TXT = """<b>╭───────────⍟
 • ᴍy ɴᴀᴍᴇ : {}
-• ᴘʀᴏɢʀᴀᴍᴇʀ : <a href=https://t.me/AniflixRoBot>Ankit</a>
-• ɴᴇᴛᴡᴏʀᴋ : <a href=https://t.me/Aniflix_Official>ANIFLIX</a>
-• ᴄʜᴀᴛ ɢʀᴏᴜᴘ: <a href=https://t.me/Aniflix_Anime_Requests>SUPPORT</a>
-• ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/AniflixRoBot>Ankit</a>
+• ᴘʀᴏɢʀᴀᴍᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
+• ɴᴇᴛᴡᴏʀᴋ : <a href=https://t.me/AntiFlix_A>ANTIFLIX</a>
+• ᴄʜᴀᴛ ɢʀᴏᴜᴘ: <a href=https://t.me/kingcey1>SUPPORT</a>
+• ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
 ╰───────────────⍟ """
 
     HELP_TXT = """
@@ -82,7 +82,7 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 
 ◦ <code> -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Powered By:- @Straw_Hat_Bots" -metadata author="@straw_hat_bots" -metadata:s:s title="Subtitled By :- @Straw_Hat_Bots" -metadata:s:a title="By :- @Straw_Hat_Bots" -metadata:s:v title="By:- @Straw_Hat_bots" </code>
 
-📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @aniflixClou
+📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Otakikingcey1
 """
 
     PROGRESS_BAR = """<b>\n
@@ -91,4 +91,5 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 ➜ ⏳️ ᴅᴏɴᴇ : {0}%
 ➜ 🚀 sᴘᴇᴇᴅ: {3}/s
 ➜ ⏰️ ᴇᴛᴀ: {4}
+@Kingcey
 ╰━━━━━━━━━━━━━━━➜ </b>"""

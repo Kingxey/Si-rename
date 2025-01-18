@@ -17,12 +17,12 @@ class Config(object):
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
     # database config
-    DB_NAME = os.environ.get("DB_NAME", "Antiflix")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")  # ⚠️ Required
+    DB_NAME = os.environ.get("DB_NAME", "auto")
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://auto:autoren@auto.0igu7.mongodb.net/?retryWrites=true&w=majority&appName=auto")  # ⚠️ Required
 
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "https://envs.sh/9zg.jpg")
+    START_PIC = os.environ.get("START_PIC", " https://envs.sh/HAv.jpg")
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '8190849763 7428552084').split()]  # ⚠️ Required
     
@@ -86,9 +86,9 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 """
 
     PROGRESS_BAR = """<b>\n
-╭━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱➜
-➜ 🗃️ sɪᴢᴇ: {1} | {2}
-➜ ⏳️ ᴅᴏɴᴇ : {0}%
-➜ 🚀 sᴘᴇᴇᴅ: {3}/s
-➜ ⏰️ ᴇᴛᴀ: {4}
-╰━━━━━━━━━━━━━━━➜ </b>"""
+━━━━❰ᴘʀᴏɢʀᴇss ʙᴀʀ❱➜
+➪ 🗃️ sɪᴢᴇ: {1} | {2}
+➪ ⏳️ ᴅᴏɴᴇ : {0}%
+➪ 🚀 sᴘᴇᴇᴅ: {3}/s
+➪ ⏰️ ᴇᴛᴀ: {4}
+╰━━━━━━━━━━━➜ </b>"""

@@ -26,7 +26,7 @@ class Config(object):
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '1740287480 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "Otakukingcey1") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "Animes_French") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -39,17 +39,17 @@ class Config(object):
 
 class Txt(object):
     # part of text configuration
-    START_TXT = """<b>Hɪ {} ♡゙,\n\n◈ I Aᴍ A Pᴏᴡᴇʀғᴜʟ Fɪʟᴇ Rᴇɴᴀᴍᴇʀ Bᴏᴛ.
-◈ I Cᴀɴ Rᴇɴᴀᴍᴇ Fɪʟᴇs ᴜᴘᴛᴏ 4GB, Cʜᴀɴɢᴇ Tʜᴜᴍʙɴᴀɪʟs, Cᴏɴᴠᴇʀᴛ Bᴇᴛᴡᴇᴇɴ Vɪᴅᴇᴏ Aɴᴅ Fɪʟᴇ, Aɴᴅ Sᴜᴘᴘᴏʀᴛ Cᴜsᴛᴏᴍ Tʜᴜᴍʙɴᴀɪʟs Aɴᴅ Cᴀᴘᴛɪᴏɴs.\n\n• Mᴀɪɴᴛᴀɪɴᴇᴅ Bʏ : @AntiFlix_A
+    START_TXT = """<b>Salut {} ♡゙,\n\n◈ Je suis un bot de renommage de fichier surpuissant.
+◈ Je peux renommer des fichiers jusqu'à 4 Go, changer des vignettes, convertir entre vidéo et fichier, et supporter des vignettes personnalisées et des légendes.\n\n• Maintenu par : @Animes_French
 """
 
-    ABOUT_TXT = """<b>╭───────────⍟
-• ᴍy ɴᴀᴍᴇ : {}
-• ᴘʀᴏɢʀᴀᴍᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
-• ɴᴇᴛᴡᴏʀᴋ : <a href=https://t.me/AntiFlix_A>ANTIFLIX</a>
-• ᴄʜᴀᴛ ɢʀᴏᴜᴘ: <a href=https://t.me/kingcey1>SUPPORT</a>
-• ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
-╰───────────────⍟ """
+    ABOUT_TXT = """<b>━━━━━━━━━━━➣
+┣⬡ ᴍy ɴᴀᴍᴇ : {}
+┣⬡ ᴘʀᴏɢʀᴀᴍᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
+┣⬡ ɴᴇᴛᴡᴏʀᴋ : <a href=https://t.me/AntiFlix_A>ANTIFLIX</a>
+┣⬡ ᴄʜᴀᴛ ɢʀᴏᴜᴘ: <a href=https://t.me/kingcey1>SUPPORT</a>
+┣⬡ ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
+━━━━━━━━━━━➣ """
 
     HELP_TXT = """
 🌌 <b><u>Comment Ajouter Une Miniature ?</u></b>
@@ -59,20 +59,20 @@ class Txt(object):
 <b>•></b> /view_thumb Utiliser cette commande pour voir votre miniature récemment ajouter.
 
 
-📑 <b><u>Comment ajouter une légende ? </u></b>
+📑 <b><u>Comment ajouter une LEGENDE ? </u></b>
 
-<b>•></b> /set_caption - Uꜱᴇ Tʜɪꜱ Cᴏᴍᴍᴀɴᴅ Tᴏ Sᴇᴛ ᴀ Cᴜꜱᴛᴏᴍ Cᴀᴩᴛɪᴏɴ
-<b>•></b> /see_caption - Uꜱᴇ Tʜɪꜱ Cᴏᴍᴍᴀɴᴅ Tᴏ Vɪᴇᴡ Yᴏᴜʀ Cᴜꜱᴛᴏᴍ Cᴀᴩᴛɪᴏɴ
-<b>•></b> /del_caption - Uꜱᴇ Tʜɪꜱ Cᴏᴍᴍᴀɴᴅ Tᴏ Dᴇʟᴇᴛᴇ Yᴏᴜʀ Cᴜꜱᴛᴏᴍ Cᴀᴩᴛɪᴏɴ
-Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
+<b>•></b> /set_caption - Utiliser cette Commande pour ajouter une Légende 
+<b>•></b> /see_caption - Utiliser cette Commande pour voir votre Légende
+<b>•></b> /del_caption - Utiliser cette Commande pour supprimer votre Légende
+Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 💾 Sɪᴢᴇ: {filesize}
 ⏰ Dᴜʀᴀᴛɪᴏɴ: {duration} </code>
 
-✏️ <b><u>Hᴏᴡ Tᴏ Rᴇɴᴀᴍᴇ A Fɪʟᴇ</u></b>
-<b>•></b> Sᴇɴᴅ Aɴy Fɪʟᴇ Aɴᴅ Tyᴩᴇ Nᴇᴡ Fɪʟᴇ Nᴀᴍᴇ \nAɴᴅ Aᴇʟᴇᴄᴛ Tʜᴇ Fᴏʀᴍᴀᴛ [ document, video, audio ].           
+✏️ <b><u>Comment Renommer un fichier</u></b>
+<b>•></b> Envoyez n'importe quel fichier et tapez le nouveau nom de fichier \n et sélectionnez le format [document, vidéo, audio].           
 
 
-<b>➜ Kingcey:</b> <a href=https://t.me/Otakukingcey1>𝐒ᴛʀᴀᴡ 𝐇ᴀᴛ ꭙ 𝐁ᴏᴛs</a>
+<b>➜ Kingcey:</b> <a href=https://t.me/Otakukingcey1>Kingcey</a>
 """
 
     SEND_METADATA = """
@@ -80,7 +80,7 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 
 ☞ Fᴏʀ Exᴀᴍᴘʟᴇ:-
 
-◦ <code> -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Powered By:- @Straw_Hat_Bots" -metadata author="@straw_hat_bots" -metadata:s:s title="Subtitled By :- @Straw_Hat_Bots" -metadata:s:a title="By :- @Straw_Hat_Bots" -metadata:s:v title="By:- @Straw_Hat_bots" </code>
+◦ <code> -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Powered By:- @Otakukingcey1" -metadata author="@straw_hat_bots" -metadata:s:s title="Subtitled By :- @Straw_Hat_Bots" -metadata:s:a title="By :- @Straw_Hat_Bots" -metadata:s:v title="By:- @Straw_Hat_bots" </code>
 
 📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Otakikingcey1
 """
@@ -91,5 +91,4 @@ Exᴀᴍᴩʟᴇ:- <code> /set_caption 📕 Fɪʟᴇ Nᴀᴍᴇ: {filename}
 ➜ ⏳️ ᴅᴏɴᴇ : {0}%
 ➜ 🚀 sᴘᴇᴇᴅ: {3}/s
 ➜ ⏰️ ᴇᴛᴀ: {4}
-@Kingcey
 ╰━━━━━━━━━━━━━━━➜ </b>"""

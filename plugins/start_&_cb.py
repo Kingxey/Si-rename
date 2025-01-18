@@ -18,12 +18,12 @@ async def start(client, message):
     await db.add_user(client, message)
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton(
-            '⛅ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/Otakukingcey1'),
+            '🫧Mis à Jour', url='https://t.me/Otakukingcey1'),
         InlineKeyboardButton(
-            '🌨️ sᴜᴘᴘᴏʀᴛ', url='https://t.me/Kingcey1')
+            '➕Support', url='https://t.me/Kingcey1')
     ], [
-        InlineKeyboardButton('❄️ ᴀʙᴏᴜᴛ', callback_data='about'),
-        InlineKeyboardButton('❗ ʜᴇʟᴘ', callback_data='help')
+        InlineKeyboardButton('✴️A propos', callback_data='about'),
+        InlineKeyboardButton('❗Aide', callback_data='help')
     ]])
     if Config.START_PIC:
         await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)
@@ -43,14 +43,14 @@ async def rename_start(client, message):
 
     try:
         text = f"""**__ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴇ ᴛᴏ ᴅᴏ ᴡɪᴛʜ ᴛʜɪs ғɪʟᴇ.?__**\n\n**ғɪʟᴇ ɴᴀᴍᴇ** :- `{filename}`\n\n**ғɪʟᴇ sɪᴢᴇ** :- `{filesize}`"""
-        buttons = [[InlineKeyboardButton("📝 sᴛᴀʀᴛ ʀᴇɴᴀᴍᴇ 📝", callback_data="rename")],
-                   [InlineKeyboardButton("✖️ ᴄᴀɴᴄᴇʟ ✖️", callback_data="close")]]
+        buttons = [[InlineKeyboardButton("📝 Commencer 📝", callback_data="rename")],
+                   [InlineKeyboardButton("✖️ Annuler ✖️", callback_data="close")]]
         await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
     except FloodWait as e:
         await sleep(e.value)
         text = f"""**__What do you want me to do with this file.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
-        buttons = [[InlineKeyboardButton("📝 sᴛᴀʀᴛ ʀᴇɴᴀᴍᴇ 📝", callback_data="rename")],
-                   [InlineKeyboardButton("✖️ ᴄᴀɴᴄᴇʟ ✖️", callback_data="close")]]
+        buttons = [[InlineKeyboardButton("📝 Commencer 📝", callback_data="rename")],
+                   [InlineKeyboardButton("✖️ Annuler ✖️", callback_data="close")]]
         await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
     except:
         pass
@@ -65,12 +65,12 @@ async def cb_handler(client, query: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    '⛅ Uᴩᴅᴀᴛᴇꜱ', url='https://t.me/Otakukingcey1'),
+                    '🫧Mis à Jour', url='https://t.me/Otakukingcey1'),
                 InlineKeyboardButton(
-                    '🌨️ Sᴜᴩᴩᴏʀᴛ', url='https://t.me/kingcey1')
+                    '➕Support', url='https://t.me/kingcey1')
             ], [
-                InlineKeyboardButton('❄️ ᴀʙᴏᴜᴛ', callback_data='about'),
-                InlineKeyboardButton('❗ ʜᴇʟᴘ', callback_data='help')
+                InlineKeyboardButton('✴️A propos', callback_data='about'),
+                InlineKeyboardButton('❗Aide', callback_data='help')
             ]])
         )
     elif data == "help":
@@ -87,8 +87,8 @@ async def cb_handler(client, query: CallbackQuery):
             text=Txt.ABOUT_TXT.format(client.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("✘ ᴄʟᴏsᴇ", callback_data="close"),
-                InlineKeyboardButton("⟪ ʙᴀᴄᴋ", callback_data="start")
+                InlineKeyboardButton("✘ Fermer", callback_data="close"),
+                InlineKeyboardButton("⟪ Retour", callback_data="start")
             ]])
         )
 

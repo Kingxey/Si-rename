@@ -17,9 +17,8 @@ class Config(object):
     STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
     # database config
-    DB_NAME = os.environ.get("DB_NAME", "auto")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://auto:autoren@auto.0igu7.mongodb.net/?retryWrites=true&w=majority&appName=auto")  # ⚠️ Required
-
+    DB_NAME = os.environ.get("DB_NAME", "Antiflix")
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")
     # other configs
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", " https://envs.sh/HAv.jpg")

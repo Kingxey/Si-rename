@@ -43,11 +43,11 @@ class Txt(object):
 """
 
     ABOUT_TXT = """<b>━━━━━━━━━━━➣
-┣⬡ ᴍy ɴᴀᴍᴇ : {}
-┣⬡ ᴘʀᴏɢʀᴀᴍᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
-┣⬡ ɴᴇᴛᴡᴏʀᴋ : <a href=https://t.me/AntiFlix_A>ANTIFLIX</a>
-┣⬡ ᴄʜᴀᴛ ɢʀᴏᴜᴘ: <a href=https://t.me/kingcey1>SUPPORT</a>
-┣⬡ ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href=https://t.me/kingcey>Kingcey</a>
+┣⬡ **ᴍy ɴᴀᴍᴇ** : {}
+┣⬡ **ᴘʀᴏɢʀᴀᴍᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
+┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AntiFlix_A>ANTIFLIX</a>
+┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
+┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
 ━━━━━━━━━━━➣ """
 
     HELP_TXT = """

@@ -9,7 +9,7 @@ class Config(object):
     # pyro client config
     API_ID = os.environ.get("API_ID", "24817837")  # ⚠️ Required
     API_HASH = os.environ.get("API_HASH", "acd9f0cc6beb08ce59383cf250052686")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "8115314705:AAGaYTT0jQDl3hqcFC9rijeJlmcacaNVBjg")  # ⚠️ Required
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7961812281:AAHMvlEY-VwqXDHxf9FQephHPTDwdkfcTrg")  # ⚠️ Required
 
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
@@ -21,7 +21,7 @@ class Config(object):
     DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", " https://envs.sh/HAv.jpg")
+    START_PIC = os.environ.get("START_PIC", "https://envs.sh/HAv.jpg")
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '8190849763 7428552084').split()]  # ⚠️ Required
     

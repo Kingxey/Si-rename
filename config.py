@@ -21,7 +21,7 @@ class Config(object):
     DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "https://envs.sh/HAv.jpg")
+    START_PIC = os.environ.get("START_PIC", "https://envs.sh/HzQ.jpg")
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '6475872631 7428552084').split()]  # ⚠️ Required
     

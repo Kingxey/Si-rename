@@ -18,9 +18,9 @@ async def start(client, message):
     await db.add_user(client, message)
     button = InlineKeyboardMarkup([[
         InlineKeyboardButton(
-            '🫧Mis à Jour', url='https://t.me/Animes_French'),
+            '🫧Mis à Jour', url='https://t.me/AMAZON_ANIME'),
         InlineKeyboardButton(
-            '➕Support', url='https://t.me/idozejei')
+            '➕Support', url='https://t.me/kingcey1')
     ], [
         InlineKeyboardButton('✴️A propos', callback_data='about'),
         InlineKeyboardButton('❗Aide', callback_data='help')
@@ -65,9 +65,9 @@ async def cb_handler(client, query: CallbackQuery):
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[
                 InlineKeyboardButton(
-                    '🫧Mis à Jour', url='https://t.me/Animes_French'),
+                    '🫧Mis à Jour', url='https://t.me/AMAZON_ANIME'),
                 InlineKeyboardButton(
-                    '➕Support', url='https://t.me/kidizje')
+                    '➕Support', url='https://t.me/kingcey1')
             ], [
                 InlineKeyboardButton('✴️A propos', callback_data='about'),
                 InlineKeyboardButton('❗Aide', callback_data='help')

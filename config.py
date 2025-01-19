@@ -45,9 +45,11 @@ class Txt(object):
     ABOUT_TXT = """<b>━━━━━━━━━━━➣
 ┣⬡ **ᴍy ɴᴀᴍᴇ** : {}
 ┣⬡ **ᴘʀᴏɢʀᴀᴍᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
-┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AntiFlix_A>ANTIFLIX</a>
+┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/Animes_French>ANIME FRENCH</a>
 ┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
 ┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
+┣⬡ **librairie** : <a href=pyrogram.org></a>
+┣⬡ **hébergé sur** : <a herf=heroku.com></a>
 ━━━━━━━━━━━➣ """
 
     HELP_TXT = """
@@ -71,7 +73,7 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 <b>•></b> Envoyez n'importe quel fichier et tapez le nouveau nom de fichier \n et sélectionnez le format [document, vidéo, audio].           
 
 
-<b>➜ Kingcey:</b> <a href=https://t.me/Otakukingcey1>Kingcey</a>
+<b>➜ Kingcey:</b> <a href=https://.t.me/Animes_French>Kingcey</a>
 """
 
     SEND_METADATA = """

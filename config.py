@@ -9,8 +9,8 @@ class Config(object):
     # pyro client config
     API_ID = os.environ.get("API_ID", "24817837")  # ⚠️ Required
     API_HASH = os.environ.get("API_HASH", "acd9f0cc6beb08ce59383cf250052686")  # ⚠️ Required
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7961812281:AAHMvlEY-VwqXDHxf9FQephHPTDwdkfcTrg")  # ⚠️ Required
-
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7920699861:AAF4b2HgrS684rLooNAny1PR3fhk6T05KP8")  # ⚠️ Required
+    
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
     STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
@@ -23,9 +23,9 @@ class Config(object):
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", "https://envs.sh/HAv.jpg")
     ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '8190849763 7428552084').split()]  # ⚠️ Required
+        admin) else admin for admin in os.environ.get('ADMIN', '6475872631 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "Animes_French") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "AMAZON_ANIME") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -39,18 +39,18 @@ class Config(object):
 class Txt(object):
     # part of text configuration
     START_TXT = """<b>Salut {} ♡゙,\n\n◈ Je suis un bot de renommage de fichier surpuissant.
-◈ Je peux renommer des fichiers jusqu'à 4 Go, changer des vignettes, convertir entre vidéo et fichier, et supporter des vignettes personnalisées et des légendes.\n\n• Maintenu par : @Animes_French
+◈ Je peux renommer des fichiers jusqu'à 4 Go, changer des vignettes, convertir entre vidéo et fichier, et supporter des vignettes personnalisées et des légendes.\n\n• Maintenu par : @AMAZON_ANIME
 """
 
-    ABOUT_TXT = """<b>━━━━━━━━━━━➣
+    ABOUT_TXT = """<b>━━━━━━━━━━━➣🔥
 ┣⬡ **ᴍy ɴᴀᴍᴇ** : {}
 ┣⬡ **ᴘʀᴏɢʀᴀᴍᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
-┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/Animes_French>ANIME FRENCH</a>
+┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AMAZON_ANIME>ANIME FRENCH</a>
 ┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
-┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
-┣⬡ **librairie** : <a href=pyrogram.org></a>
-┣⬡ **hébergé sur** : <a herf=heroku.com></a>
-━━━━━━━━━━━➣ """
+┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/HENCO_AD>Henco</a>
+┣⬡ **librairie💫** : <a href=pyrogram.org></a>
+┣⬡ **hébergé💻 sur** : <a herf=heroku.com></a>
+━━━━━━━━━━━➣🔥 """
 
     HELP_TXT = """
 🌌 <b><u>Comment Ajouter Une Miniature ?</u></b>
@@ -73,7 +73,7 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 <b>•></b> Envoyez n'importe quel fichier et tapez le nouveau nom de fichier \n et sélectionnez le format [document, vidéo, audio].           
 
 
-<b>➜ Kingcey:</b> <a href=https://.t.me/Animes_French>Kingcey</a>
+<b>➜ AMAZON ANIME:</b> <a href=https://.t.me/AMAZON_ANIME>Kingcey</a>
 """
 
     SEND_METADATA = """

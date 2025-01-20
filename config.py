@@ -21,7 +21,7 @@ class Config(object):
     DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")
     # other configs
     BOT_UPTIME = time.time()
-    START_PIC = os.environ.get("START_PIC", "https://envs.sh/HzQ.jpg")
+    START_PIC = os.environ.get("START_PIC", "https://envs.sh/HU4.jpg")
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '6475872631 7428552084').split()]  # ⚠️ Required
     
@@ -48,7 +48,7 @@ class Txt(object):
 ┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AMAZON_ANIME>ANIME FRENCH</a>
 ┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
 ┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/HENCO_AD>Henco</a>
-┣⬡ **librairie💫** : <a href=pyrogram.org></a>
+┣⬡ **librairie💫** : **[pyrogram](pyrogram.org)**
 ┣⬡ **hébergé💻 sur** : <a herf=heroku.com></a>
 ━━━━━━━━━━━➣🔥 """
 

@@ -48,7 +48,7 @@ async def rename_start(client, message):
         await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
     except FloodWait as e:
         await sleep(e.value)
-        text = f"""**__What do you want me to do with this file.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
+        text = f"""**__Voulez vous réanimé ce fichier.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
         buttons = [[InlineKeyboardButton("📝 Commencer 📝", callback_data="rename")],
                    [InlineKeyboardButton("✖️ Annuler ✖️", callback_data="close")]]
         await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
@@ -67,7 +67,7 @@ async def cb_handler(client, query: CallbackQuery):
                 InlineKeyboardButton(
                     '🫧Mis à Jour', url='https://t.me/AMAZON_ANIME'),
                 InlineKeyboardButton(
-                    '➕Support', url='https://t.me/kingcey1')
+                    '➕Support', url='https://t.me/SpyWars_chat')
             ], [
                 InlineKeyboardButton('✴️A propos', callback_data='about'),
                 InlineKeyboardButton('❗Aide', callback_data='help')

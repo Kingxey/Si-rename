@@ -20,7 +20,7 @@ async def start(client, message):
         InlineKeyboardButton(
             '🫧Mis à Jour', url='https://t.me/AMAZON_ANIME'),
         InlineKeyboardButton(
-            '➕Support', url='https://t.me/kingcey1')
+            '➕Support', urlhttps://t.me/SpyWars_chat')
     ], [
         InlineKeyboardButton('✴️A propos', callback_data='about'),
         InlineKeyboardButton('❗Aide', callback_data='help')

@@ -25,7 +25,7 @@ class Config(object):
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '5760201151 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "Otakukingcey1") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "bot_kingdox") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -49,7 +49,7 @@ class Txt(object):
 ┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
 ┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/Kingcey>Kingcey</a>
 ┣⬡ **librairie💫** : **[pyrogram](pyrogram.org)**
-┣⬡ **hébergé💻 sur** : <a herf=heroku.com></a>
+┣⬡ **hébergé💻 sur** : **[Heroku](heroku.com)**
 ━━━━━━━━━━━➣🔥 """
 
     HELP_TXT = """

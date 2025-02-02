@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, CallbackQuery
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
 from helper.database import db
 from config import Config, Txt
 import humanize
@@ -9,22 +9,21 @@ from time import sleep
 
 @Client.on_message(filters.private & filters.command("start"))
 async def start(client, message):
-
     if message.from_user.id in Config.BANNED_USERS:
-        await message.reply_text("Sorry, You are banned.")
+        await message.reply_text("🚫 Désolé, vous êtes banni.")
         return
 
     user = message.from_user
     await db.add_user(client, message)
-    button = InlineKeyboardMarkup([[
-        InlineKeyboardButton(
-            '🫧Mis à Jour', url='https://t.me/AMAZON_ANIME'),
-        InlineKeyboardButton(
-            '💫Support', url='https://t.me/SpyWars_chat')
-    ], [
-        InlineKeyboardButton('✴️A propos', callback_data='about'),
-        InlineKeyboardButton('❗Aide', callback_data='help')
-    ], [InlineKeyboardButton('Contact✨', url='https://t.me/Kingcey')]]
+
+    button = InlineKeyboardMarkup([
+        [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/AMAZON_ANIME'),
+         InlineKeyboardButton('💫 Support', url='https://t.me/SpyWars_chat')],
+        [InlineKeyboardButton('✴️ À propos', callback_data='about'),
+         InlineKeyboardButton('❗ Aide', callback_data='help')],
+        [InlineKeyboardButton('Contact ✨', url='https://t.me/Kingcey')]
+    ])
+
     if Config.START_PIC:
         await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)
     else:
@@ -37,21 +36,23 @@ async def rename_start(client, message):
     filename = file.file_name
     filesize = humanize.naturalsize(file.file_size)
 
-    if not Config.STRING_SESSION:
-        if file.file_size > 4000 * 1024 * 1024:
-            return await message.reply_text("Sᴏʀʀy Bʀᴏ Tʜɪꜱ Bᴏᴛ Iꜱ Dᴏᴇꜱɴ'ᴛ Sᴜᴩᴩᴏʀᴛ Uᴩʟᴏᴀᴅɪɴɢ Fɪʟᴇꜱ Bɪɢɢᴇʀ Tʜᴀɴ 4Gʙ")
+    if not Config.STRING_SESSION and file.file_size > 4000 * 1024 * 1024:
+        return await message.reply_text("❌ Ce bot ne supporte pas les fichiers de plus de 4Go.")
+
+    text = f"""**Que souhaitez-vous faire avec ce fichier ?**\n
+📄 **Nom du fichier** : `{filename}`\n
+📦 **Taille** : `{filesize}`"""
+
+    buttons = InlineKeyboardMarkup([
+        [InlineKeyboardButton("📝 Renommer", callback_data="rename")],
+        [InlineKeyboardButton("✖️ Annuler", callback_data="close")]
+    ])
 
     try:
-        text = f"""**__ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴᴛ ᴍᴇ ᴛᴏ ᴅᴏ ᴡɪᴛʜ ᴛʜɪs ғɪʟᴇ.?__**\n\n**ғɪʟᴇ ɴᴀᴍᴇ** :- `{filename}`\n\n**ғɪʟᴇ sɪᴢᴇ** :- `{filesize}`"""
-        buttons = [[InlineKeyboardButton("📝 Commencer 📝", callback_data="rename")],
-                   [InlineKeyboardButton("✖️ Annuler ✖️", callback_data="close")]]
-        await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
+        await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=buttons)
     except FloodWait as e:
         await sleep(e.value)
-        text = f"""**__Voulez vous réanimé ce fichier.?__**\n\n**File Name** :- `{filename}`\n\n**File Size** :- `{filesize}`"""
-        buttons = [[InlineKeyboardButton("📝 Commencer 📝", callback_data="rename")],
-                   [InlineKeyboardButton("✖️ Annuler ✖️", callback_data="close")]]
-        await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(buttons))
+        await message.reply_text(text=text, reply_to_message_id=message.id, reply_markup=buttons)
     except:
         pass
 
@@ -59,43 +60,43 @@ async def rename_start(client, message):
 @Client.on_callback_query()
 async def cb_handler(client, query: CallbackQuery):
     data = query.data
+
     if data == "start":
         await query.message.edit_text(
             text=Txt.START_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton(
-                    '🫧Mis à Jour', url='https://t.me/AMAZON_ANIME'),
-                InlineKeyboardButton(
-                    '➕Support', url='https://t.me/SpyWars_chat')
-            ], [
-                InlineKeyboardButton('✴️A propos', callback_data='about'),
-        InlineKeyboardButton('❗Aide', callback_data='help')
-    ], [InlineKeyboardButton('Contact✨', url='https://t.me/Kingcey')]]
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/AMAZON_ANIME'),
+                 InlineKeyboardButton('➕ Support', url='https://t.me/SpyWars_chat')],
+                [InlineKeyboardButton('✴️ À propos', callback_data='about'),
+                 InlineKeyboardButton('❗ Aide', callback_data='help')],
+                [InlineKeyboardButton('Contact ✨', url='https://t.me/Kingcey')]
+            ])
+        )
+
     elif data == "help":
         await query.message.edit_text(
             text=Txt.HELP_TXT,
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("✘ ᴄʟᴏsᴇ", callback_data="close"),
-                InlineKeyboardButton("⟪ ʙᴀᴄᴋ", callback_data="start")
-            ]])
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("✘ Fermer", callback_data="close"),
+                 InlineKeyboardButton("⟪ Retour", callback_data="start")]
+            ])
         )
+
     elif data == "about":
         await query.message.edit_text(
             text=Txt.ABOUT_TXT.format(client.mention),
             disable_web_page_preview=True,
-            reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("✘ Fermer", callback_data="close"),
-                InlineKeyboardButton("⟪ Retour", callback_data="start")
-            ]])
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("✘ Fermer", callback_data="close"),
+                 InlineKeyboardButton("⟪ Retour", callback_data="start")]
+            ])
         )
 
     elif data == "close":
         try:
             await query.message.delete()
             await query.message.reply_to_message.delete()
-            await query.message.continue_propagation()
         except:
-            await query.message.delete()
-            await query.message.continue_propagation()
+            pass

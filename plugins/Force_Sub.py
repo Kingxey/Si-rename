@@ -21,9 +21,9 @@ async def not_subscribed(_, client, message):
 
 @Client.on_message(filters.private & filters.create(not_subscribed))
 async def forces_sub(client, message):
-    buttons = [[InlineKeyboardButton(text="📢 Rejoindre ma chaîne", url=f"https://t.me/{Config.FORCE_SUB}")], 
-               [InlineKeyboardButton(text="Rejoindre Ici aussi", url='https://t.me/Otakukingcey1') ]]
-    text = "**Désolé. Pour pouvoir m'utiliser et avoir mes fonctionnalités, tu dois d'abord rejoindre ma chaine**"
+    buttons = [[InlineKeyboardButton(text="📢 Rejoindre ma chaîne", url='https://t.me/AntiFlix_A')], 
+               [InlineKeyboardButton(text="Rejoindre Ici aussi", url=f"https://t.me/{Config.FORCE_SUB}") ]]
+    text = "**Désolé. Pour pouvoir m'utiliser et avoir mes fonctionnalités, tu dois d'abord rejoindre mes chaines**"
     try:
         user = await client.get_chat_member(Config.FORCE_SUB, message.from_user.id)    
         if user.status == enums.ChatMemberStatus.BANNED:                                   

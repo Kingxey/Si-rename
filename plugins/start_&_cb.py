@@ -24,7 +24,7 @@ async def start(client, message):
     ], [
         InlineKeyboardButton('✴️A propos', callback_data='about'),
         InlineKeyboardButton('❗Aide', callback_data='help')
-    ]])
+    ], [InlineKeyboardButton('Contact✨', url='https://t.me/Kingcey')]]
     if Config.START_PIC:
         await message.reply_photo(Config.START_PIC, caption=Txt.START_TXT.format(user.mention), reply_markup=button)
     else:
@@ -70,9 +70,8 @@ async def cb_handler(client, query: CallbackQuery):
                     '➕Support', url='https://t.me/SpyWars_chat')
             ], [
                 InlineKeyboardButton('✴️A propos', callback_data='about'),
-                InlineKeyboardButton('❗Aide', callback_data='help')
-            ]])
-        )
+        InlineKeyboardButton('❗Aide', callback_data='help')
+    ], [InlineKeyboardButton('Contact✨', url='https://t.me/Kingcey')]]
     elif data == "help":
         await query.message.edit_text(
             text=Txt.HELP_TXT,

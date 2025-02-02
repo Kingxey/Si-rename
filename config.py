@@ -18,14 +18,14 @@ class Config(object):
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Antiflix")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Aniflix:Lipun123@aniflix.q2wina5.mongodb.net/?retryWrites=true&w=majority&appName=Aniflix")
+    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Ethan:Ethan123@telegrambots.lva9j.mongodb.net/?retryWrites=true&w=majority&appName=TELEGRAMBOTS")
     # other configs
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", "https://envs.sh/HU4.jpg")
     ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '6475872631 7428552084').split()]  # ⚠️ Required
+        admin) else admin for admin in os.environ.get('ADMIN', '5760201151 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "AMAZON_ANIME") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "Otakukingcey1") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -45,9 +45,9 @@ class Txt(object):
     ABOUT_TXT = """<b>━━━━━━━━━━━➣🔥
 ┣⬡ **ᴍy ɴᴀᴍᴇ** : {}
 ┣⬡ **ᴘʀᴏɢʀᴀᴍᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
-┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AMAZON_ANIME>ANIME FRENCH</a>
+┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AntiFlix_A>Film & Serie</a>
 ┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
-┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/HENCO_AD>Henco</a>
+┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/Kingcey>Kingcey</a>
 ┣⬡ **librairie💫** : **[pyrogram](pyrogram.org)**
 ┣⬡ **hébergé💻 sur** : <a herf=heroku.com></a>
 ━━━━━━━━━━━➣🔥 """
@@ -73,7 +73,7 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 <b>•></b> Envoyez n'importe quel fichier et tapez le nouveau nom de fichier \n et sélectionnez le format [document, vidéo, audio].           
 
 
-<b>➜ AMAZON ANIME:</b> <a href=https://.t.me/AMAZON_ANIME>Kingcey</a>
+<b>➜ **[ANTIFLIX](https://t.me/AntiFlix_A)**
 """
 
     SEND_METADATA = """
@@ -92,4 +92,6 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 ➪ ⏳️ ᴅᴏɴᴇ : {0}%
 ➪ 🚀 sᴘᴇᴇᴅ: {3}/s
 ➪ ⏰️ ᴇᴛᴀ: {4}
+ ce bot est à vendre. 
+ Contact : @Kingcey 
 ╰━━━━━━━━━━━➜ </b>"""

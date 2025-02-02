@@ -17,8 +17,8 @@ async def start(client, message):
     await db.add_user(client, message)
 
     button = InlineKeyboardMarkup([
-        [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/Otakukingcey1'),
-         InlineKeyboardButton('💫 Support', url='https://t.me/Kingcey1')],
+        [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/bot_kingdox'),
+         InlineKeyboardButton('💫 Support', url='https://t.me/bot_Kingdot')],
         [InlineKeyboardButton('✴️ À propos', callback_data='about'),
          InlineKeyboardButton('❗ Aide', callback_data='help')],
         [InlineKeyboardButton('Contact ✨', url='https://t.me/Kingcey')]
@@ -66,8 +66,8 @@ async def cb_handler(client, query: CallbackQuery):
             text=Txt.START_TXT.format(query.from_user.mention),
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/Otakukingcey1'),
-                 InlineKeyboardButton('➕ Support', url='https://t.me/Kingcey1')],
+                [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/bot_kingdox'),
+                 InlineKeyboardButton('➕ Support', url='https://t.me/bot_kingdot')],
                 [InlineKeyboardButton('✴️ À propos', callback_data='about'),
                  InlineKeyboardButton('❗ Aide', callback_data='help')],
                 [InlineKeyboardButton('Contact ✨', url='https://t.me/Kingcey')]

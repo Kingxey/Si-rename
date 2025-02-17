@@ -14,7 +14,7 @@ class Config(object):
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
     STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "1BJWap1wBu77g_fE5URs-6Q91y-lW0AkXNKZK6_TVbPIaR4h9pVtPycVh9KRrpLY3hR63nXF8UPuYHf-z-wpAqlO3ioBD2b5OscPEq1fY_BS0gKDF7WYY8OLcKiOP81atzP-PoOGCtW1NrvAGj-4AfoHYNcMJaTh0Ch8XJWHh6e68LcC-q6KOd9E379Shh9Q1HvJPR5K-3ImPCb2XTpUUaZxNN_KJkgp3B074Xi__DjG_3F4We6WM466o3D6jY_3G4uXfSJq-vjFyvAfSMWEACqjOqQHZ6bggF7sEzVvduUGIbBK9VmanORs48ChZD3K6o0WsyVaOx4wU0qqaDs5mTMt-yd2FSeg=")
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Antiflix")
@@ -25,7 +25,7 @@ class Config(object):
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '5760201151 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "bot_kingdox") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "botzflix") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -83,7 +83,7 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 
 ◦ <code> -map 0 -c:s copy -c:a copy -c:v copy -metadata title="Powered By:- @Otakukingcey1" -metadata author="@straw_hat_bots" -metadata:s:s title="Subtitled By :- @Straw_Hat_Bots" -metadata:s:a title="By :- @Straw_Hat_Bots" -metadata:s:v title="By:- @Straw_Hat_bots" </code>
 
-📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @Otakikingcey1
+📥 Fᴏʀ Hᴇʟᴘ Cᴏɴᴛ. @BotZFlix
 """
 
     PROGRESS_BAR = """<b>\n
@@ -92,6 +92,7 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 ➪ ⏳️ ᴅᴏɴᴇ : {0}%
 ➪ 🚀 sᴘᴇᴇᴅ: {3}/s
 ➪ ⏰️ ᴇᴛᴀ: {4}
- ce bot est à vendre. 
- Contact : @Kingcey 
+
+<spoiler> ce bot est à vendre. 
+ Contact : @Kingcey</spoiler> 
 ╰━━━━━━━━━━━➜ </b>"""

@@ -39,7 +39,7 @@ class Config(object):
 class Txt(object):
     # part of text configuration
     START_TXT = """<b>Salut {} ♡゙,\n\n◈ Je suis un bot de renommage de fichier surpuissant.
-◈ Je peux renommer des fichiers jusqu'à 4 Go, changer des vignettes, convertir entre vidéo et fichier, et supporter des vignettes personnalisées et des légendes.\n\n• Maintenu par : @Bot_Kingdox
+◈ Je peux renommer des fichiers jusqu'à 4 Go, changer des vignettes, convertir entre vidéo et fichier, et supporter des vignettes personnalisées et des légendes.\n\n<cite>• Maintenu par : @BotZFlix</cite>
 """
 
     ABOUT_TXT = """<b>━━━━━━━━━━━➣🔥

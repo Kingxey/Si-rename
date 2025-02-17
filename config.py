@@ -14,7 +14,7 @@ class Config(object):
     # premium 4g renaming client
     STRING_API_ID = os.environ.get("STRING_API_ID", "")
     STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "1BJWap1wBu77g_fE5URs-6Q91y-lW0AkXNKZK6_TVbPIaR4h9pVtPycVh9KRrpLY3hR63nXF8UPuYHf-z-wpAqlO3ioBD2b5OscPEq1fY_BS0gKDF7WYY8OLcKiOP81atzP-PoOGCtW1NrvAGj-4AfoHYNcMJaTh0Ch8XJWHh6e68LcC-q6KOd9E379Shh9Q1HvJPR5K-3ImPCb2XTpUUaZxNN_KJkgp3B074Xi__DjG_3F4We6WM466o3D6jY_3G4uXfSJq-vjFyvAfSMWEACqjOqQHZ6bggF7sEzVvduUGIbBK9VmanORs48ChZD3K6o0WsyVaOx4wU0qqaDs5mTMt-yd2FSeg=")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "")
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Antiflix")

@@ -18,7 +18,7 @@ class Config(object):
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Antiflix")
-    DB_URL = os.environ.get("DB_URL", "mongodb+srv://Ethan:Ethan123@telegrambots.lva9j.mongodb.net/?retryWrites=true&w=majority&appName=TELEGRAMBOTS")
+    DB_URL = os.environ.get("DB_URL", "mongo.servidgicnehzcinfgdiogezifcegzapozaeguzaepnzbciezez")
     # other configs
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", "https://envs.sh/fCc.jpg")

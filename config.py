@@ -7,14 +7,14 @@ id_pattern = re.compile(r'^.\d+$')
 
 class Config(object):
     # pyro client config
-    API_ID = os.environ.get("API_ID", "24817837")  # ⚠️ Required
-    API_HASH = os.environ.get("API_HASH", "acd9f0cc6beb08ce59383cf250052686")  # ⚠️ Required
+    API_ID = os.environ.get("API_ID", "22772852")  # ⚠️ Required
+    API_HASH = os.environ.get("API_HASH", "fca07d920ff98792c57806f2db5d816d")  # ⚠️ Required
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "7561380664:AAHtqTlXGe8YdPSVhEz_J7JHD1sxZcNOL0k")  # ⚠️ Required
     
     # premium 4g renaming client
-    STRING_API_ID = os.environ.get("STRING_API_ID", "")
-    STRING_API_HASH = os.environ.get("STRING_API_HASH", "")
-    STRING_SESSION = os.environ.get("STRING_SESSION", "")
+    STRING_API_ID = os.environ.get("STRING_API_ID", "22772852")
+    STRING_API_HASH = os.environ.get("STRING_API_HASH", "fca07d920ff98792c57806f2db5d816d")
+    STRING_SESSION = os.environ.get("STRING_SESSION", "BAFbfHQAsp_1S7YWp5e-Q09OqlO03TnJ-GvW6L-hjQoo0d8BeiLnUJ0azBJCGC1O5WNfbFTXDgCJINsGAWU1eNt3KLR6Ss2d4OqQAniyJc8PYb2FBNA1b16AuxDdX9bez5LEfOw79fuOqk4SmfdWrAFgUvCk4eQ9zoCohtFPPjipTSR-LEGA4xHw2mgiuCYyMhtnJC8LDWGuaA4UJRzZ8hspWRjZv8cX5x5h1tYe3GWrbqEitTzDXbwlKPXSDkQwDhGqYeQuQZAk1PK934rJvzUOVEdrkq2pJsKOB9PFKHdlUXddoC1dih3O4YtCdCT1py5dnyz3XraLEET53D_aNG5jAt2ZSwAAAAF9nLn6AA")
 
     # database config
     DB_NAME = os.environ.get("DB_NAME", "Antiflix")
@@ -23,9 +23,9 @@ class Config(object):
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", "https://envs.sh/fCc.jpg")
     ADMIN = [int(admin) if id_pattern.search(
-        admin) else admin for admin in os.environ.get('ADMIN', '5760201151 7428552084').split()]  # ⚠️ Required
+        admin) else admin for admin in os.environ.get('ADMIN', '7428552084 7428552084').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "botzflix") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "kgcanime") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
     FLOOD = int(os.environ.get("FLOOD", '105'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
@@ -44,10 +44,10 @@ class Txt(object):
 
     ABOUT_TXT = """<b>━━━━━━━━━━━➣🔥
 ┣⬡ **ᴍy ɴᴀᴍᴇ** : {}
-┣⬡ **ᴘʀᴏɢʀᴀᴍᴇʀ** : <a href=https://t.me/kingcey>Kingcey</a>
-┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/AntiFlix_A>Film & Serie</a>
-┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/kingcey1>SUPPORT</a>
-┣⬡ **ᴍʏ ᴏᴡɴᴇʀ / ᴅᴇᴠᴇʟᴏᴘᴇʀ** : <a href=https://t.me/Kingcey>Kingcey</a>
+┣⬡ **ᴘʀᴏɢʀᴀᴍᴇʀ** : <a href=https://t.me/BotZFlix>BotZFlix</a>
+┣⬡ **ɴᴇᴛᴡᴏʀᴋ**: <a href=https://t.me/ZFlix-Team>Film & Serie</a>
+┣⬡ **ᴄʜᴀᴛ ɢʀᴏᴜᴘ**: <a href=https://t.me/Un_legende>SUPPORT</a>
+┣⬡ **Proprietaire** : <a href=https://t.me/Un_LeGaNde>☠️ 𝙐𝙣𝙀 𝙇𝙚𝙂𝘼𝙣𝘿𝙚☠️</a>
 ┣⬡ **librairie💫** : **[pyrogram](pyrogram.org)**
 ┣⬡ **hébergé💻 sur** : **[Heroku](heroku.com)**
 ━━━━━━━━━━━➣🔥 """
@@ -73,7 +73,7 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 <b>•></b> Envoyez n'importe quel fichier et tapez le nouveau nom de fichier \n et sélectionnez le format [document, vidéo, audio].           
 
 
-<b>➜ **[ANTIFLIX](https://t.me/AntiFlix_A)**
+<b>➜ **[☠️ 𝙐𝙣𝙀 𝙇𝙚𝙂𝘼𝙣𝘿𝙚☠️](https://t.me/Un_LeGaNde)**
 """
 
     SEND_METADATA = """
@@ -92,7 +92,4 @@ Exeᴍᴩʟᴇ:- <code> /set_caption 📕 Nom du fichier: {filename}
 ➪ ⏳️ ᴅᴏɴᴇ : {0}%
 ➪ 🚀 sᴘᴇᴇᴅ: {3}/s
 ➪ ⏰️ ᴇᴛᴀ: {4}
-
-<spoiler> ce bot est à vendre. 
- Contact : @Kingcey</spoiler> 
 ╰━━━━━━━━━━━➜ </b>"""

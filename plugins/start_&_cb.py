@@ -20,8 +20,7 @@ async def start(client, message):
         [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/botZFlix'),
          InlineKeyboardButton('💫 Support', url='https://t.me/kingcey1')],
         [InlineKeyboardButton('✴️ À propos', callback_data='about'),
-         InlineKeyboardButton('❗ Aide', callback_data='help')],
-        [InlineKeyboardButton('Contact ✨', url='https://t.me/Kingcey')]
+         InlineKeyboardButton('❗ Aide', callback_data='help')]
     ])
 
     if Config.START_PIC:
@@ -69,8 +68,7 @@ async def cb_handler(client, query: CallbackQuery):
                 [InlineKeyboardButton('🫧 Mises à Jour', url='https://t.me/botZFlix'),
                  InlineKeyboardButton('➕ Support', url='https://t.me/kingcey1')],
                 [InlineKeyboardButton('✴️ À propos', callback_data='about'),
-                 InlineKeyboardButton('❗ Aide', callback_data='help')],
-                [InlineKeyboardButton('Contact ✨', url='https://t.me/Kingcey')]
+                 InlineKeyboardButton('❗ Aide', callback_data='help')]
             ])
         )
 

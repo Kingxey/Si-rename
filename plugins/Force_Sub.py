@@ -21,7 +21,7 @@ async def not_subscribed(_, client, message):
 
 @Client.on_message(filters.private & filters.create(not_subscribed))
 async def forces_sub(client, message):
-    buttons = [[InlineKeyboardButton(text="📢 Rejoindre ma chaîne", url='https://t.me/AntiFlix_A')], 
+    buttons = [[InlineKeyboardButton(text="📢 Rejoindre ma chaîne", url='https://t.me/KGCAnime')], 
                [InlineKeyboardButton(text="Rejoindre Ici aussi", url=f"https://t.me/{Config.FORCE_SUB}") ]]
     text = "**Désolé. Pour pouvoir m'utiliser et avoir mes fonctionnalités, tu dois d'abord rejoindre mes chaines\après clique à nouveau sur la commande /start**"
     try:

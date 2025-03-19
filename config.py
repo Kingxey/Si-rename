@@ -25,9 +25,9 @@ class Config(object):
     ADMIN = [int(admin) if id_pattern.search(
         admin) else admin for admin in os.environ.get('ADMIN', '7428552084 6402390522').split()]  # ⚠️ Required
     
-    FORCE_SUB = os.environ.get("FORCE_SUB", "kgcanime") # ⚠️ Required Username without @
+    FORCE_SUB = os.environ.get("FORCE_SUB", "anime_Manga_jp") # ⚠️ Required Username without @
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "-1002376378205"))  # ⚠️ Required
-    FLOOD = int(os.environ.get("FLOOD", '105'))
+    FLOOD = int(os.environ.get("FLOOD", '80'))
     BANNED_USERS = set(int(x) for x in os.environ.get(
         "BANNED_USERS", "5267548838").split())
 
